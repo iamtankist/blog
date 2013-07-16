@@ -5,8 +5,6 @@ date: 2013-07-16 15:35
 comments: true
 categories: [OAuth, Symfony2]
 ---
-# OAuth2 Explained: Part 1 - Principles and Terminology 
-
 
 - [Part 1 - Principles and Terminology](#)
 - Part 2 - Setting up OAuth2 with Symfyony2 using FOSOAuthServerBundle
