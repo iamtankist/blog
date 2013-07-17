@@ -472,7 +472,7 @@ Here is the controller responsible for the login form
 	}
 ```
 and here is the corresponding minimal template
-``` PHP
+``` php
  	{# src/Acme/DemoBundle/Resources/views/Security/login.html.twig #}
 	<div class="form">
 	    <form id="login" class="vertical" action="{{ path('acme_oauth_server_auth_login_check') }}" method="post">
@@ -501,7 +501,7 @@ and here is the corresponding minimal template
 
 
 Following goes into __security.yml__
-```
+``` yml
 	security:
 	    encoders:
 	        Acme\DemoBundle\Entity\User:
