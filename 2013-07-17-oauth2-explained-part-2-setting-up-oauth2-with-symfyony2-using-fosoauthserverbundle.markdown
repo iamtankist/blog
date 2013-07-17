@@ -231,7 +231,8 @@ We are going to need a user provider as well.
 
 Now register the user manager, repository and provider in the Dependency Injection Container
 
-	<parameters>
+``` xml
+    <parameters>
         <parameter key="platform.entity.user.class">Acme\DemoBundle\Entity\User</parameter>
         <parameter key="platform.user.provider.class">Acme\DemoBundle\Provider\UserProvider</parameter>
     </parameters>
@@ -252,7 +253,7 @@ Now register the user manager, repository and provider in the Dependency Injecti
             <argument type="service" id="platform.user.repository" />
         </service>
     </services>
-
+```
 
 
 Ok, now we are good to go with setting up OAuthServerBundle on our platform.
@@ -262,12 +263,14 @@ Ok, now we are good to go with setting up OAuthServerBundle on our platform.
 
 To install FOSOauthServerBundle, execute the following in your command line:
 
+``` bash
 	 php composer.phar require friendsofsymfony/oauth-server-bundle dev-master
+```
 
 This will include the package to the composer.json and install it.
 
 Now you need to enable this bundle in the Kernel:
-
+``` php
 	<?php
 	// app/AppKernel.php
 	
@@ -278,7 +281,7 @@ Now you need to enable this bundle in the Kernel:
 	        new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
 	    );
 	} 
-
+```
 Now we need to create three four additional entities. 
 
 ### Client Entity
