@@ -286,6 +286,7 @@ Now we need to create three four additional entities.
 
 ### Client Entity
 
+``` php
 	// src/Acme/DemoBundle/Entity/Client.php
 	
 	namespace Acme\DemoBundle\Entity;
@@ -310,9 +311,11 @@ Now we need to create three four additional entities.
 	        parent::__construct();
 	    }
 	}
+```
 
 ### AccessToken Entity
 
+``` php
 	<?php
 	// src/Acme/DemoBundle/Entity/AccessToken.php
 	
@@ -344,9 +347,11 @@ Now we need to create three four additional entities.
 	     */
 	    protected $user;
 	}
+```
 
 ### RefreshToken Entity
 
+``` php
 	<?php
 	// src/Acme/DemoBundle/Entity/RefreshToken.php
 	
@@ -378,9 +383,9 @@ Now we need to create three four additional entities.
 	     */
 	    protected $user;
 	}
-
+```
 ### AuthCode Entity
-
+``` php
 	<?php
 	// src/Acme/DemoBundle/Entity/AuthCode.php
 	
@@ -412,13 +417,13 @@ Now we need to create three four additional entities.
 	     */
 	    protected $user;
 	}
-
+```
 Please pay attention to the user entity namespace, since your User entity might be in other bundle, make sure that namespaces pointing to User entity are correct. 
 
 Ok, entities are created, now it's time to create a separate login page for users coming from OAuth direction. I prefer to use separate login forms to handle this, because usually inside the project you have different redirection policies, and in case of OAuth you strictly need to redirect back to referrer. But of course feel free to reuse your already existing login form inside the project, just make sure it redirects you to the right place then. 
 
 Here is the controller responsible for the login form
-
+``` php
 	<?php
 
 	# src/Acme/DemoBundle/Controller/SecurityController.php
@@ -465,9 +470,9 @@ Here is the controller responsible for the login form
 	
 	    }
 	}
-
+```
 and here is the corresponding minimal template
-
+``` PHP
  	{# src/Acme/DemoBundle/Resources/views/Security/login.html.twig #}
 	<div class="form">
 	    <form id="login" class="vertical" action="{{ path('acme_oauth_server_auth_login_check') }}" method="post">
@@ -490,17 +495,13 @@ and here is the corresponding minimal template
 	        </div>
 	    </form>
 	</div>
-
-	
-	
-
-
+```
 
 ### Configuration
 
 
 Following goes into __security.yml__
-
+```
 	security:
 	    encoders:
 	        Acme\DemoBundle\Entity\User:
@@ -562,6 +563,7 @@ Following goes into __security.yml__
 	        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
 	        - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
 	        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+``` 
 
 following goes to __routing.yml__
 
