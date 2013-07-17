@@ -19,7 +19,7 @@ Let's assume you already have a project running on Symfony2 with Doctrine2, and 
 Also your project already, most probably, should has a User Entity, if not you can create something like this one.
 
 <!-- more -->
-``` PHP
+``` php
   <?php
 	
 	// src/Acme/DemoBundle/Entity/User.php
@@ -163,7 +163,7 @@ Also your project already, most probably, should has a User Entity, if not you c
 
 We are going to need a user provider as well.
 
-``` PHP
+``` php
 	<?php
 		// src/Acme/DemoBundle/Provider/UserProvider.php
 
