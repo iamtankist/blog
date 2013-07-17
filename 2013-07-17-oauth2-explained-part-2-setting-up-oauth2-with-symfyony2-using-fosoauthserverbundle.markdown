@@ -19,7 +19,7 @@ Let's assume you already have a project running on Symfony2 with Doctrine2, and 
 Also your project already, most probably, should has a User Entity, if not you can create something like this one.
 
 <!-- more -->
-
+``` PHP
   <?php
 	
 	// src/Acme/DemoBundle/Entity/User.php
@@ -159,9 +159,11 @@ Also your project already, most probably, should has a User Entity, if not you c
 	            ) = unserialize($serialized);
 	    }
 	}
+```
 
 We are going to need a user provider as well.
 
+``` PHP
 	<?php
 		// src/Acme/DemoBundle/Provider/UserProvider.php
 
@@ -225,6 +227,7 @@ We are going to need a user provider as well.
 		        || is_subclass_of($class, $this->userRepository->getClassName());
 		    }
 		}
+```
 
 Now register the user manager, repository and provider in the Dependency Injection Container
 
