@@ -52,6 +52,6 @@ Or an intermidiate grant type - password. You provide a client id, client secret
 
 So the __Grant Type__ represents the flow needed for the __Client__ to obtain __Access Token__. 
 
-In OAuth2 there are five Grant Types that are defined by the standard, but you have an ability to imeplement a ustom one for your needs. 
+In OAuth2 there are five Grant Types that are defined by the standard, but you have an ability to implement a ustom one for your needs. 
 
 For example you need to identify user not by username/password, but you give them API keys, in order not to transmit password in clear text over API. Then you need to implement a grant type for that flow. How to do that in details will be described in the 5th part of this tutorial.
