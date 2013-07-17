@@ -263,7 +263,7 @@ Ok, now we are good to go with setting up OAuthServerBundle on our platform.
 
 To install FOSOauthServerBundle, execute the following in your command line:
 
-``` bash
+``` sh
 	 php composer.phar require friendsofsymfony/oauth-server-bundle dev-master
 ```
 
@@ -501,7 +501,7 @@ and here is the corresponding minimal template
 
 
 Following goes into __security.yml__
-``` yml
+``` yaml
 	security:
 	    encoders:
 	        Acme\DemoBundle\Entity\User:
@@ -566,6 +566,7 @@ Following goes into __security.yml__
 ``` 
 
 following goes to __routing.yml__
+``` yaml
 
 	# app/config/routing.yml
 	fos_oauth_server_token:
@@ -581,10 +582,10 @@ following goes to __routing.yml__
 	acme_oauth_server_auth_login_check:
 	    pattern:  /oauth/v2/auth_login_check
 	    defaults: { _controller: AcmeDemoBundle:Security:loginCheck }
-
+```
 
 and finally __config.yml__
-
+``` yaml
 	# app/config/config.yml
 	fos_oauth_server:
 	    db_driver: orm
@@ -596,17 +597,18 @@ and finally __config.yml__
 	        user_provider: platform.user.provider
 	        options:
 	            supported_scopes: user
+```
 
 Now all configurations done, time to update database structure
-
+``` sh
 	php app/console doctrine:schema:update --force
- 
+```
 ### Client Creation
 
 first thing you need to do is give the platform ability to easily create clients for OAuth protected communication, and a protected API call.
 
 Create a command file
-
+``` php
 	<?php
 	# src/Acmen/DemoBundle/Command/CreateClientCommand.php	
 	namespace Acme\DemoBundle\Command;
@@ -664,24 +666,25 @@ Create a command file
 	        );
 	    }
 	}
+```
 
 In order to test it, please execute
-
+``` sh
 	 php app/console acme:oauth-server:client:create --redirect-uri="http://clinet.local/" --grant-type="authorization_code" --grant-type="password" --grant-type="refresh-token" --grant-type="token" --grant-type="client_credentials"
-
+```
 this will register an OAuth client on the platform side, and will Output something like this (of course, you will see slightly different output)
-
+```
 	Added a new client with public id 5_ebg354gknv48kc88o8oogwokckco0o40sc000cowc8soosw0k, secret 5ub5upfxih0k8g44w00ogwc4swog4088o8444sssos8k888o8g
-
+```
 Keep those public_id and secret somewhere private, since that's the credentials for the client application to access your backend using oauth.
-
 
 ### Check if it works
 
 Execute the following request in your browser 
-	
+```
 	http://portal.local/app_dev.php/oauth/v2/token?client_id=5_ebg354gknv48kc88o8oogwokckco0o40sc000cowc8soosw0k&client_secret=5ub5upfxih0k8g44w00ogwc4swog4088o8444sssos8k888o8g&grant_type=client_credentials
-
+```
 If you see response like this one, the we did everything correctly, otherwise, leave a comment, or contact me over twitter, let's figure this out together ;)
-
+``` json
 	{"access_token":"YTk0YTVjZDY0YWI2ZmE0NjRiODQ4OWIyNjZkNjZlMTdiZGZlNmI3MDNjZGQwYTZkMDNiMjliNDg3NWYwZWI0MQ","expires_in":3600,"token_type":"bearer","scope":"user","refresh_token":"ZDU1MDY1OTc4NGNlNzQ5NWFiYTEzZTE1OGY5MWNjMmViYTBiNmRjOTNlY2ExNzAxNWRmZTM1NjI3ZDkwNDdjNQ"}
+```
