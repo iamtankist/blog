@@ -684,7 +684,7 @@ Execute the following request in your browser
 ```
 	http://portal.local/app_dev.php/oauth/v2/token?client_id=5_ebg354gknv48kc88o8oogwokckco0o40sc000cowc8soosw0k&client_secret=5ub5upfxih0k8g44w00ogwc4swog4088o8444sssos8k888o8g&grant_type=client_credentials
 ```
-If you see response like this one, the we did everything correctly, otherwise, leave a comment, or contact me over twitter, let's figure this out together ;)
+If you see response like this one, then we did everything correctly, otherwise, leave a comment, or contact me over twitter, let's figure this out together ;)
 ``` json
 	{"access_token":"YTk0YTVjZDY0YWI2ZmE0NjRiODQ4OWIyNjZkNjZlMTdiZGZlNmI3MDNjZGQwYTZkMDNiMjliNDg3NWYwZWI0MQ","expires_in":3600,"token_type":"bearer","scope":"user","refresh_token":"ZDU1MDY1OTc4NGNlNzQ5NWFiYTEzZTE1OGY5MWNjMmViYTBiNmRjOTNlY2ExNzAxNWRmZTM1NjI3ZDkwNDdjNQ"}
 ```
