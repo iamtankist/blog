@@ -599,7 +599,7 @@ and finally __config.yml__
 	            supported_scopes: user
 ```
 
-Now all configurations done, time to update database structure
+Now, when all configurations done, time to update database structure
 ``` sh
 	php app/console doctrine:schema:update --force
 ```
@@ -610,7 +610,7 @@ first thing you need to do is give the platform ability to easily create clients
 Create a command file
 ``` php
 	<?php
-	# src/Acmen/DemoBundle/Command/CreateClientCommand.php	
+	# src/Acme/DemoBundle/Command/CreateClientCommand.php	
 	namespace Acme\DemoBundle\Command;
 	
 	use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
