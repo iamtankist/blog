@@ -14,7 +14,7 @@ categories: [OAuth, Symfony2]
 
 ## Prerequisites
 
-Let's assume you already have a project running on Symfony2 with Doctrine2, and you would like to enable some OAuth2 provider functionality on it. In case you still don't have a running symfony installation, please go through [Symfony Book: Installation](http://symfony.com/doc/current/book/installation.html) instructions and get a fresh copy of a Symfony2.
+Let's assume you already have a project running on Symfony2 with Doctrine2, and you would like to enable some OAuth2 provider functionality on it. In case you still don't have a running Symfony2 installation, please go through [Symfony Book: Installation](http://symfony.com/doc/current/book/installation.html) instructions and get a fresh copy of a Symfony2.
 
 Also your project already, most probably, should has a User Entity, if not you can create something like this one.
 
