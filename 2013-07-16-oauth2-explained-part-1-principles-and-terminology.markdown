@@ -20,7 +20,7 @@ Before we dive in into technical aspects of OAuth, let's get the OAuth terminolo
 ### Provider
 
 So you have a functional platform, gathered some data and functionality and now it's time when you need to provide this data and functionality over an API to your users, mobile devices and other platforms. You will be an OAuth __Provider__, rather soon. 
-
+<!-- more -->
 ### Access Token
 
 

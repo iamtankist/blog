@@ -17,7 +17,7 @@ published: true
 ## Preparations
 
 We'll need a controller that mimics a dummy API behavior for us.
-
+<!-- more -->
 ``` php
 	<?php
 
