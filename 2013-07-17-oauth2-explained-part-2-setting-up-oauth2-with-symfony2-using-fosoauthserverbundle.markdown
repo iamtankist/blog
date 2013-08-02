@@ -661,8 +661,9 @@ Create a command file
 	        $clientManager->updateClient($client);
 	        $output->writeln(
 	            sprintf(
-	                'Added a new client with public id <info>%s</info>.',
-	                $client->getPublicId()
+	                'Added a new client with public id <info>%s</info>, secret <info>%s</info>',
+	                $client->getPublicId(),
+	                $client->getSecret()
 	            )
 	        );
 	    }
